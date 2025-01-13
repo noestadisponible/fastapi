@@ -1,3 +1,99 @@
+/* Configuración global */
 body {
-    background-color: aqua;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background-color: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 0px #ff6600;
+}
+
+/* Navegación */
+nav {
+    margin: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    padding: 10px 15px;
+    border: 2px solid #ff6600;
+    border-radius: 5px;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-color: #ff6600;
+    color: #fff;
+}
+
+/* Contenido principal */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Listas en las páginas */
+main ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+main ul li {
+    background-color: #ffcc00;
+    color: #000;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 15px;
+    }
 }

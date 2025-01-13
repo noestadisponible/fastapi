@@ -1,29 +1,27 @@
 from fastapi import FastAPI, Request
-from fastapi.templating import Jinja2Templates
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
-templates = Jinja2Templates(directory="templates")
+
+# Montar archivos estáticos
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get("/")
-def read_root():
-    return "Hello Lucho"
+# Configurar las plantillas
+templates = Jinja2Templates(directory="templates")
 
-@app.get("/hola")
-def hola(request: Request):
-     apellido : str = "perez"
-     return templates.TemplateResponse(
-        request=request, name="hola.html" , 
-        context={"nombre": "oscar","hhh": apellido}                   
-    )
+# Ruta principal que sirve "index.html"
+@app.get("/", response_class=HTMLResponse)
+async def read_root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
+# Otra ruta para la página "hola.html"
+@app.get("/about", response_class=HTMLResponse)
+async def about_page(request: Request):
+    return templates.TemplateResponse("hola.html", {"request": request})
 
-@app.get("/pllll")
-def pompis(request: Request):
-     nombre : str  = "oscar"
-     apellido : str = "perez"
-
-     return templates.TemplateResponse(
-        request=request, name="pagina.html" , context={"nombre": nombre}                   
-    )
+# Otra ruta para "students.html"
+@app.get("/students", response_class=HTMLResponse)
+async def students_page(request: Request):
+    return templates.TemplateResponse("students.html", {"request": request})

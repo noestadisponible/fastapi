@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static',path='css/style.css') }}" />
-     {% block css %}{% endblock %}
-    {% block head %}{% endblock %}
+    <title>{% block title %}Título{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <h1>SIEMPRE ESTA</h1>
-
-  {% block content %}
-  
-  {% endblock %}
-  
-  {% block footer %}
+    <header>
+        <h1>Mi Sitio Web</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/about">Sobre Nosotros</a>
+            <a href="/students">Estudiantes</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
     <footer>
-        <p>Footer</p>
+        <p>© 2025 Mi Sitio Web</p>
     </footer>
-  {% endblock %}
-   
 </body>
-</html>
 </html>

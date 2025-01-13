@@ -8,7 +8,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
 def read_root():
-    return "Hello World"
+    return "Hello Lucho"
 
 @app.get("/hola")
 def hola(request: Request):

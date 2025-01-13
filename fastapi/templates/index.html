@@ -1,18 +1,25 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>FastAPI</title>
-  <link rel="stylesheet" href="{{ url_for('static',path="css/style.css") }}" />
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-
-    <h1 >{{ nombre }}</h1>
-
-   
-    <a href="{{ url_for('read_item') }}">Home</a>
-    <a href="{{ url_for('static',path="css/style.css") }}">jjj</a>
-
-    
+    <header>
+        <h1>Bienvenido a Mi Página Web</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/about">Sobre Nosotros</a>
+            <a href="/students">Estudiantes</a>
+        </nav>
+    </header>
+    <main>
+        <p>¡Esta es mi página inicial creada con FastAPI!</p>
+    </main>
+    <footer>
+        <p>© 2025 Mi Página Web</p>
+    </footer>
 </body>
 </html>
